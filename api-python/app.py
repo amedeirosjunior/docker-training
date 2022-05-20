@@ -8,7 +8,7 @@ CORS(app)
 @app.route("/")
 def hello_world():
     try:
-        conn = psycopg2.connect(host="localhost", database="qyonservices", user="postgres", password="postgres")
+        conn = psycopg2.connect(host="localhost", database="docker-training", user="postgres", password="docker")
         return """{ "message": "connected" }"""
     except:
         return """{ "message": "not connected" }"""
