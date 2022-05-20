@@ -3,21 +3,13 @@ version: "3"
 services:
   app:
     build: .
-    command: npm start
     ports:
       - "4200:4200"
-    volumes:
-      - .:/web
 
   api-python:
-    build: .
-    command: python app.py
+    build: ../api-python
     ports:
       - "9000:9000"
-    volumes:
-      - .:/api
-    environment:
-      DATABASE_URL: postgres://docker-training@postgres/postgres
 
   postgres: 
     image: postgres:9.6.2-alpine
